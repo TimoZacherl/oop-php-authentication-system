@@ -7,7 +7,7 @@ Forked from [OOP PHP Authentication System](https://github.com/ashawkat/oop-php-
 
 ## Todo
 
-- [ ] use password_hash for hashing passwords
+- [x] use password_hash for hashing passwords
 - [ ] fix sql-injection vulnerability
 - [ ] add PDO version
 
