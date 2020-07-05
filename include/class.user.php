@@ -15,7 +15,7 @@
         {
             //echo "k";
             
-            $password = md5($password);
+            $password = password_hash($password, PASSWORD_DEFAULT);
 
             //checking if the username or email is available in db
             $query = "SELECT * FROM users WHERE uname='$username' OR uemail='$email'";
@@ -41,20 +41,25 @@
         /*** for login process ***/
         public function check_login($emailusername, $password)
         {
-            $password = md5($password);
-        
-            $query = "SELECT uid from users WHERE uemail='$emailusername' or uname='$emailusername' and upass='$password'";
-        
+            $query = "SELECT uid, upass from users WHERE uemail='$emailusername' or uname='$emailusername'";
+            
+            
             $result = $this->db->query($query) or die($this->db->error);
-
-        
+            
+            
             $user_data = $result->fetch_array(MYSQLI_ASSOC);
             $count_row = $result->num_rows;
+
+            
         
             if ($count_row == 1) {
-                $_SESSION['login'] = true; // this login var will use for the session thing
-                $_SESSION['uid'] = $user_data['uid'];
-                return true;
+                if (password_verify($password, $user_data["upass"])) {
+                    $_SESSION['login'] = true; // this login var will use for the session thing
+                    $_SESSION['uid'] = $user_data['uid'];
+                    return true;
+                } else {
+                    return false;
+                }
             } else {
                 return false;
             }

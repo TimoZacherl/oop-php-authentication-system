@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `users` (
 `uid` int(11) NOT NULL,
   `uname` varchar(30) DEFAULT NULL,
-  `upass` varchar(50) DEFAULT NULL,
+  `upass` varchar(256) DEFAULT NULL,
   `fullname` varchar(100) DEFAULT NULL,
   `uemail` varchar(70) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
