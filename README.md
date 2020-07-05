@@ -2,4 +2,15 @@
 
 Simple Login & Registration system using OOP PHP & Mysql. Created this for helping others who want to learn OOP PHP.
 
-[Full Article Tutorial](http://www.w3programmers.com/login-and-registration-using-oop/)
+Forked from [OOP PHP Authentication System](https://github.com/ashawkat/oop-php-authentication-system) by [ashawkat](https://github.com/ashawkat)
+
+
+## Todo
+
+- [ ] use password_hash for hashing passwords
+- [ ] fix sql-injection vulnerability
+- [ ] add PDO version
+
+## License
+
+Can be used anywhere and everywhere, without **any warranty**!
