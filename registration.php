@@ -1,4 +1,4 @@
-<?php 
+<?php
 include_once 'include/class.user.php';
 $user = new User();
 // Checking for user logged in or not
@@ -6,17 +6,17 @@ $user = new User();
     {
        header("location:index.php");
     }*/
-if (isset($_POST['submit'])){
-        extract($_POST);
-        $register = $user->reg_user($fullname, $uname, $upass, $uemail);
-        if ($register) {
-            // Registration Success
-            echo "<div style='text-align:center'>Registration successful <a href='login.php'>Click here</a> to login</div>";
-        } else {
-            // Registration Failed
-            echo "<div style='text-align:center'>Registration failed. Email or Username already exits please try again.</div>";
-        }
+if (isset($_POST['submit'])) {
+    extract($_POST);
+    $register = $user->reg_user($fullname, $uname, $upass, $uemail);
+    if ($register) {
+        // Registration Success
+        echo "<div style='text-align:center'>Registration successful <a href='login.php'>Click here</a> to login</div>";
+    } else {
+        // Registration Failed
+        echo "<div style='text-align:center'>Registration failed. Email or Username already exits please try again.</div>";
     }
+}
 ?>
   <!DOCTYPE html>
   <html lang="en">
@@ -24,7 +24,7 @@ if (isset($_POST['submit'])){
   <head>
     <meta charset="utf-8">
     <title>Register</title>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
   </head>
 
   <body>

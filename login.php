@@ -1,19 +1,19 @@
-<?php 
+<?php
 session_start();
 include_once 'include/class.user.php';
 $user = new User();
 
-if (isset($_POST['submit'])) { 
-		extract($_POST);   
-	    $login = $user->check_login($emailusername, $password);
-	    if ($login) {
-	        // Registration Success
-	       header("location:home.php");
-	    } else {
-	        // Registration Failed
-	        echo 'Wrong username or password';
-	    }
-	}
+if (isset($_POST['submit'])) {
+    extract($_POST);
+    $login = $user->check_login($emailusername, $password);
+    if ($login) {
+        // Registration Success
+        header("location:home.php");
+    } else {
+        // Registration Failed
+        echo 'Wrong username or password';
+    }
+}
 ?>
   <!DOCTYPE html>
   <html lang="en">
@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
   <head>
     <meta charset="utf-8">
     <title>OOP Login Module</title>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
   </head>
 
   <body>

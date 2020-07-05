@@ -1,15 +1,15 @@
-<?php 
+<?php
 session_start();
     include_once 'include/class.user.php';
     $user = new User();
 
     $uid = $_SESSION['uid'];
 
-    if (!$user->get_session()){
-       header("location:login.php");
+    if (!$user->get_session()) {
+        header("location:login.php");
     }
 
-    if (isset($_GET['q'])){
+    if (isset($_GET['q'])) {
         $user->user_logout();
         header("location:login.php");
     }
@@ -20,7 +20,7 @@ session_start();
   <head>
     <meta charset="utf-8">
     <title>Home</title>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
   </head>
 
   <body>
