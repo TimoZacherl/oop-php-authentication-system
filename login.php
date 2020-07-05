@@ -53,9 +53,10 @@ if (isset($_POST['submit'])) {
               onclick="return(submitlogin());">
           </div>
         </div>
-        <p class="mt-3">
+
+        <div class="form-group">
           <a href="registration.php">Register new user</a>
-        </p>
+        </div>
       </form>
     </div>
   </div>
