@@ -15,58 +15,62 @@ if (isset($_POST['submit'])) {
     }
 }
 ?>
-  <!DOCTYPE html>
-  <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
-  <head>
-    <meta charset="utf-8">
-    <title>OOP Login Module</title>
-    <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
-  </head>
+<head>
+  <meta charset="utf-8">
+  <title>OOP Login Module</title>
+  <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+</head>
 
-  <body>
-    <div id="container" class="container">
-      <h1>Login Here</h1>
+<body>
+  <div class="container-sm">
+    <div class="col-10 p-2 mx-auto">
+      <h1 class="h1">Login</h1>
       <form action="" method="post" name="login">
-        <table class="table " width="400">
-          <tr>
-            <th>UserName or Email:</th>
-            <td>
-              <input type="text" name="emailusername" required>
-            </td>
-          </tr>
-          <tr>
-            <th>Password:</th>
-            <td>
-              <input type="password" name="password" required>
-            </td>
-          </tr>
-          <tr>
-            <td>&nbsp;</td>
-            <td>
-              <input class="btn" type="submit" name="submit" value="Login" onclick="return(submitlogin());">
-            </td>
-          </tr>
-          <tr>
-            <td>&nbsp;</td>
-            <td><a href="registration.php">Register new user</a></td>
-          </tr>
+        <div class="form-group">
+          <div class="form-group-header">
+            <label for="emailusername">Username or Email</label>
+          </div>
+          <div class="form-group-body">
+            <input class="form-control" type="text" id="emailusername" name="emailusername" required />
+          </div>
+        </div>
 
-        </table>
+        <div class="form-group">
+          <div class="form-group-header">
+            <label for="password">Password</label>
+          </div>
+          <div class="form-group-body">
+            <input class="form-control" type="password" id="password" name="password" required>
+          </div>
+        </div>
+
+        <div class="form-group mt-4">
+          <div class="form-actions">
+            <input class="btn btn-primary btn-block" type="submit" name="submit" value="Login"
+              onclick="return(submitlogin());">
+          </div>
+        </div>
+        <p class="mt-3">
+          <a href="registration.php">Register new user</a>
+        </p>
       </form>
     </div>
-    <script>
-      function submitlogin() {
-        var form = document.login;
-        if (form.emailusername.value == "") {
-          alert("Enter email or username.");
-          return false;
-        } else if (form.password.value == "") {
-          alert("Enter password.");
-          return false;
-        }
-      }
-    </script>
+  </div>
+  <script>
+  function submitlogin() {
+    var form = document.login;
+    if (form.emailusername.value == "") {
+      alert("Enter email or username.");
+      return false;
+    } else if (form.password.value == "") {
+      alert("Enter password.");
+      return false;
+    }
+  }
+  </script>
 
 
-  </body>
+</body>
